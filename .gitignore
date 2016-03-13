@@ -1,0 +1,7 @@
+/Debug/
+/Release/
+*.user
+*.ilk
+*.pdb
+*.ncb
+*.suo

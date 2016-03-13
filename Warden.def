@@ -1,0 +1,56 @@
+LIBRARY Warden
+      EXPORTS
+      
+     zlib_deflate_string
+     
+     rc4_init
+     rc4_crypt
+     rc4_crypt_data
+     rc4_buffer_size
+     
+     rsa_free
+     rsa_crypt
+     rsa_create
+     rsa_hash_size
+     rsa_buffer_size
+     
+     crc32_seed
+     crc32_calc
+     crc32b_calc
+     crc32_create
+     crc32_finish
+     crc32_buffer_size
+     
+     aes_crypt
+     aes_create
+     aes_buffer_size
+     
+     sha1_reset
+     sha1_input
+     sha1_digest
+     sha1_checksum
+     
+     md5_reset
+     md5_input
+     md5_digest
+     md5_verify_data
+     
+     mediv_random_init
+     mediv_random_get_bytes
+     
+     module_get_init_address
+     module_get_prep_size
+     module_prep
+     module_init
+     module_init_rc4
+     module_handle_packet
+     
+     warden_init
+     warden_data
+     warden_cleanup
+     warden_config
+     warden_set_data_file
+     
+     check_revision
+     crev_max_result
+     crev_error_description
