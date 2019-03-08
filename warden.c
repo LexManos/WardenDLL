@@ -1,25 +1,5 @@
 #include "warden.h"
 
-
-void write_to_file(const uint8_t *data){
-	FILE *fp;
-	fopen_s(&fp, "WardenLog.txt", "a");
-	fwrite(data, 1, strlen(data), fp);
-	fclose(fp);
-}
-uint8_t *to_hex(uint8_t *data, uint32_t size, BOOLEAN spaces){
-	uint8_t *buff = safe_malloc(size * (spaces == TRUE ? 3 : 2));
-	uint32_t x = 0;
-	
-	for(x = 0; x < size; x++){
-		if(spaces == TRUE)
-			sprintf_s((uint8_t*)(buff + (3 * x)), 4, "%02X ", data[x]);
-		else
-			sprintf_s((uint8_t*)(buff + (2 * x)), 4, "%02X", data[x]);
-	}
-	return buff;
-}
-
 uint32_t __stdcall warden_init(uint32_t socket_handle){
 	warden_instance *instance = safe_malloc(sizeof(warden_instance));
 	uint32_t code_segment     = memalloc(0x1c0);

@@ -170,7 +170,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="zdll.lib Version.lib libeay32.lib"
+				AdditionalDependencies="zdll.lib Version.lib libeay32.lib Crypt32.lib"
 				OutputFile=".\Debug\Warden.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -220,6 +220,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\base64.c"
+				>
+			</File>
+			<File
 				RelativePath=".\buffer.c"
 				>
 			</File>
@@ -244,7 +248,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\crevsimple.c"
+				>
+			</File>
+			<File
 				RelativePath=".\dynamic_callbacks.c"
+				>
+			</File>
+			<File
+				RelativePath=".\log.c"
 				>
 			</File>
 			<File
@@ -301,6 +313,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\base64.h"
+				>
+			</File>
+			<File
 				RelativePath=".\buffer.h"
 				>
 			</File>
@@ -325,7 +341,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\crevsimple.h"
+				>
+			</File>
+			<File
 				RelativePath=".\dynamic_callbacks.h"
+				>
+			</File>
+			<File
+				RelativePath=".\log.h"
 				>
 			</File>
 			<File

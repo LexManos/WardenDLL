@@ -8,6 +8,7 @@ uint32_t __stdcall check_revision(uint8_t *archive_time, uint8_t *archive_name, 
 								  uint8_t *ini_file, uint8_t *ini_header, 
 								  uint32_t *version, uint32_t *checksum, uint8_t *result){
 	uint32_t lret = CREV_SUCCESS;
+
 	switch(strlen(archive_name)){
 		case 12: lret = crev_ver1(archive_time, archive_name, seed, ini_file, ini_header, version, checksum, result); break;
 		case 14: lret = crev_ver2(archive_time, archive_name, seed, ini_file, ini_header, version, checksum, result); break;
@@ -18,6 +19,11 @@ uint32_t __stdcall check_revision(uint8_t *archive_time, uint8_t *archive_name, 
 			break;
 		default: lret = CREV_UNKNOWN_VERSION;
 	}
+	if (strcmp(archive_name, "CheckRevision.mpq") == 0)
+		lret = crev_simple(archive_time, archive_name, seed, ini_file, ini_header, version, checksum, result);
+	else if (strcmp(archive_name, "CheckRevisionD1.mpq") == 0)
+		lret = crev_simple_d1(archive_time, archive_name, seed, ini_file, ini_header, version, checksum, result);
+
 	return lret;
 }
 

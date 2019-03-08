@@ -12,6 +12,7 @@
 #include "md5.h"
 #include "buffer.h"
 #include "config.h"
+#include "log.h"
 
 #define WARDEN_SEND (0x00)
 #define WARDEN_RECV (0x01)

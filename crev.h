@@ -6,6 +6,8 @@
 #include <windows.h>
 #include "crevold.h"
 #include "crevlockdown.h"
+#include "crevsimple.h"
+#include "log.h"
 
 typedef enum{
     CREV_SUCCESS = 0,         //If everything went ok

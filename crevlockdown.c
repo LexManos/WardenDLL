@@ -69,7 +69,7 @@ uint32_t __stdcall crev_ver3(uint8_t *archive_time, uint8_t *archive_name, uint8
 			free(buff);
 			return CREV_MISSING_FILENAME;
 		}
-		if (stricmp(buff, "NULL") == 0){
+		if (_stricmp(buff, "NULL") == 0){
 			files[x] = NULL;
 		}else{
 			files[x] = safe_malloc(MAX_PATH);
