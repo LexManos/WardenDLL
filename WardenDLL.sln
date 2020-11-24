@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual C++ Express 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WardenDLL", "WardenDLL.vcproj", "{A79900BC-1684-4707-8B09-F16D6D8D578D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Warden", "WardenDLL.vcproj", "{A79900BC-1684-4707-8B09-F16D6D8D578D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcproj", "{430243FB-793F-4DCA-9740-DAF30B856ED1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{A79900BC-1684-4707-8B09-F16D6D8D578D}.Debug|Win32.Build.0 = Debug|Win32
 		{A79900BC-1684-4707-8B09-F16D6D8D578D}.Release|Win32.ActiveCfg = Release|Win32
 		{A79900BC-1684-4707-8B09-F16D6D8D578D}.Release|Win32.Build.0 = Release|Win32
+		{430243FB-793F-4DCA-9740-DAF30B856ED1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{430243FB-793F-4DCA-9740-DAF30B856ED1}.Debug|Win32.Build.0 = Debug|Win32
+		{430243FB-793F-4DCA-9740-DAF30B856ED1}.Release|Win32.ActiveCfg = Release|Win32
+		{430243FB-793F-4DCA-9740-DAF30B856ED1}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

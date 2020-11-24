@@ -40,7 +40,7 @@ uint32_t read_ini_new(const uint8_t *file, uint8_t *header, uint8_t *key, uint8_
 			}
 		}
 
-		sprintf_s(path, 0x400, "%s\\%s", path, file);
+		sprintf_s(path, MAX_PATH, "%s\\%s", path, file);
 		ret = GetPrivateProfileStringA(header, key, defa, buff, length, path);
 	}else{
 		ret = GetPrivateProfileStringA(header, key, defa, buff, length, file);

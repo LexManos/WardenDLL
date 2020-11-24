@@ -5,3 +5,7 @@
 *.pdb
 *.ncb
 *.suo
+/Test/Debug/
+/.vs/
+/Hashes/
+/Test/Release/

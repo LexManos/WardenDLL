@@ -23,7 +23,7 @@ uint32_t __stdcall crev_ver3(
 
 uint32_t lockdown_shuffle_seed(uint8_t *seed);
 void lockdown_word_shifter(uint16_t *word1, uint16_t *word2);
-uint32_t lockdown_shuffle_digest(uint8_t *digest);
+uint32_t lockdown_shuffle_digest(uint8_t *digest, uint8_t *result);
 
 void lockdown_heep_create(lockdown_heep *ctx);
 uint32_t lockdown_heep_add(lockdown_heep *ctx, uint8_t *data, uint32_t size);

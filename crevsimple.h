@@ -12,6 +12,7 @@
 #include "sha1.h"
 
 #pragma comment(lib, "crypt32.lib")
+#pragma comment(lib, "Version.lib")
 
 uint32_t __stdcall crev_simple( 
 	uint8_t *archive_time, uint8_t *archive_name, uint8_t *seed, 

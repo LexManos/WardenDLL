@@ -186,11 +186,12 @@ uint32_t __stdcall crev_ver3(uint8_t *archive_time, uint8_t *archive_name, uint8
 	memset(buff2, 0, sha1_hash_size);
 	sha1_digest(&sha, buff2);
 
-	lockdown_shuffle_digest((uint8_t*)(&buff2[4]));
+
+	lockdown_shuffle_digest((uint8_t*)(&buff2[4]), result);
 
 	*version = crev_get_file_version(files[1]);
 	*checksum = (*(uint32_t*)&buff2[0]);
-	memcpy(result, (uint8_t*)(&buff2[4]), 0x10);
+	//memcpy(result, (uint8_t*)(&buff2[4]), 0x10);
 	
 	for(x = 0; x < 5; x++) 
 		if(files[x] != NULL) free(files[x]);
@@ -569,30 +570,30 @@ void lockdown_word_shifter(uint16_t *word1, uint16_t *word2){
     *word1 = str2;
 	*word2 = str1;
 }
-uint32_t lockdown_shuffle_digest(uint8_t *digest){
+uint32_t lockdown_shuffle_digest(uint8_t *digest, uint8_t *result){
 	uint16_t word1;
 	uint16_t word2;
 	uint16_t x   = 0;
-	uint16_t y   = 0;
+	int16_t  y   = 0;
 	uint16_t pos = 0;
+	const int32_t MAX_LENGTH = 0xFF;
+	uint8_t *ret = safe_malloc(MAX_LENGTH);
+	memset(ret, 0, MAX_LENGTH);
 
-	uint8_t *ret = safe_malloc(0x18);
-	uint8_t *t = safe_malloc(0x20);
 	for(x = 0x10; x > 0; ){
 		while( x > 0 && digest[x-1] == 0x00) x--;
 		if(x > 0){
 			word1 = 0;
-			for(y = x - 1; y < x; y--){
+			for(y = x - 1; y >= 0; y--){
 				word2 = (word1 << 8) + digest[y];
 				lockdown_word_shifter(&word1, &word2);
 				digest[y] = (uint8_t)(word2 & 0xFF);
 			}
-			if( (0x10 - x) >= 0xff) return 1;
 			ret[pos++] = (uint8_t)((word1+1) & 0xFF);
+			if (pos >= MAX_LENGTH) return 1;
 		}
     }
-	while(pos < 0x10) ret[pos++] = 0;
-	memcpy(digest, ret, pos);
+	memcpy(result, ret, pos + 1);
 	return 0;
 }
 

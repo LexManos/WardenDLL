@@ -1,6 +1,9 @@
 #ifndef AES_H
 #define AES_H
 
+#pragma comment (lib, "Crypt32.lib")
+#pragma comment (lib, "libeay32.lib")
+
 #include <openssl/aes.h>
 #include <string.h>
 #include "stdint.h"
